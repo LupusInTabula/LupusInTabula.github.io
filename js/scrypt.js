@@ -3,6 +3,10 @@
 toggle between hiding and showing the dropdown content */
 function FunctionMenu() {
     document.getElementById("myDropdown").classList.toggle("show");
+    const put = document.getElementById("LoginDrop");
+    if(put.style.display === 'show'){
+        document.getElementById("LoginDrop").classList.toggle("show");
+    }
 }
 
 function FunctionLogin() {
@@ -46,4 +50,20 @@ document.getElementById('commentForm').addEventListener('submit', function(event
     document.getElementById('comment').value = '';
 });
 
-
+/* funzione di ricerca */
+function functionSearch() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("searchbar");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myDropdown");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}

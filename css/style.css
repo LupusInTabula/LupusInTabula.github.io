@@ -27,6 +27,17 @@ header {
     align-items: center;
 }
 
+#searchbar {
+    background-image: url('https://www.w3schools.com/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+}
+
 .dropbtn{
     text-decoration: none;
     font-size: 1.5em;
@@ -233,6 +244,11 @@ svg, img {
 
 .article h4 {
     margin-bottom: 5px;
+}
+
+/* Solid border */
+hr.solid {
+    border-top: 3px solid #bbb;
 }
 
 /*---------------------------------------FOOTER------------------------------------------*/
