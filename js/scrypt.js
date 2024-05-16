@@ -3,10 +3,6 @@
 toggle between hiding and showing the dropdown content */
 function FunctionMenu() {
     document.getElementById("myDropdown").classList.toggle("show");
-    const put = document.getElementById("LoginDrop");
-    if(put.style.display === 'show'){
-        document.getElementById("LoginDrop").classList.toggle("show");
-    }
 }
 
 function FunctionLogin() {
@@ -29,27 +25,6 @@ for (i = 0; i < dropdown.length; i++) {
     });
 }
 
-// Sezione che gestisce l'invio del commento
-document.getElementById('commentForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Previeni il comportamento predefinito del form
-
-    // Prendi i valori inseriti dall'utente
-    var name = document.getElementById('name').value;
-    var comment = document.getElementById('comment').value;
-
-    // Crea un nuovo elemento per il commento
-    var newComment = document.createElement('div');
-    newComment.classList.add('comment');
-    newComment.innerHTML = '<h5>' + name + '</h5><p>' + comment + '</p>';
-
-    // Aggiungi il nuovo commento alla lista dei commenti
-    document.querySelector('.comments').appendChild(newComment);
-
-    // Pulisci il form dopo l'invio
-    document.getElementById('name').value = '';
-    document.getElementById('comment').value = '';
-});
-
 /* funzione di ricerca */
 function functionSearch() {
     var input, filter, ul, li, a, i, txtValue;
@@ -67,3 +42,29 @@ function functionSearch() {
         }
     }
 }
+
+/*sing up*/
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+
+/* gestione aside bar */
+$(window).resize(function() {
+    if ($(window).width() <= 992)  // Large breakpoint di Bootstrap
+    {
+        $('#aside-content').insertAfter('.col-lg-8');
+    }
+    else
+    {
+        $('#aside-content').appendTo('.col-lg-4');
+    }
+});
+
+// Chiamalo una volta all'inizio per assicurarti che si comporti correttamente al caricamento del sito
+$(window).resize();
