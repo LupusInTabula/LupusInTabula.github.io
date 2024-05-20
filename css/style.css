@@ -381,8 +381,7 @@ hr.solid {
 /*---------------------------------------FOOTER------------------------------------------*/
 
 footer {
-    margin: 20px;
-    padding: 20px 0;
+    margin: 10px;
 }
 
 .rowFooter{
@@ -417,9 +416,25 @@ h5 {
 
 
 /* -----------------------------------gestione pagina notizie------------------------------------- */
-.rowMain{
-    margin-top: 10px;
-    position: relative;
+.grid-container{
+    display: grid;
+    grid-template-areas:
+                "voidcontainer MainNews voidcontainer";
+    grid-template-columns: auto auto auto auto auto;
+    gap: 20px;
+}
+
+.voidcontainer{
+    width: auto;
+    height: auto;
+    margin: 5px;
+}
+
+h6{
+    font-size: 1.5em;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px;
 }
 
 .MainNews {
@@ -429,7 +444,7 @@ h5 {
     padding-right: 5px;
 }
 
-.MainNewsImg img{
+.MainImmage{
     width: 450px;
     height: 800px;
 }
@@ -437,15 +452,35 @@ h5 {
 .IconSection{
     display: inline-list-item;
     justify-content: space-around;
-    margin-top: 1em;
+}
+
+.IconSection img{
+    margin: 5px;
 }
 
 .imgDetails{
-    font-size: 2em;
+    font-size: 1em;
+    display: flex;
+    justify-content: start;
+    gap: 2px;
 }
 
-@media only screen and (max-width: 900px){
-    .MainNews img{
+.imgDetails p{
+    margin: 2px;
+}
+
+@media only screen and (max-width: 600px){
+    .MainImmage{
         max-width: 100%;
+        height: auto;
     }
+}
+
+/* ------------------ gestione link menu ----------------------------------------- */
+.gridMenu{
+    display: grid;
+    grid-template-areas:
+                "... topMenu ..."
+                "leftMenu sideMenu";
+    grid-template-columns: auto auto auto auto auto;
 }
