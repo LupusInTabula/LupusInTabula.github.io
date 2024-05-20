@@ -65,6 +65,9 @@ $(window).resize(function() {
         $('#aside-content').appendTo('.col-lg-4');
     }
 });
-
-// Chiamalo una volta all'inizio per assicurarti che si comporti correttamente al caricamento del sito
 $(window).resize();
+
+/* gestione data*/
+var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+document.getElementById('dateParagraph').innerHTML = date;

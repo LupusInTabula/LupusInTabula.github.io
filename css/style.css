@@ -26,6 +26,7 @@ main{
     justify-content: space-between;
     align-items: center;
     position: relative;
+    max-width: 100%;
 }
 
 .containerMenu{
@@ -347,6 +348,11 @@ nav.container{
     font-size: 2em;
     font-weight: bold;
 }
+
+.col1 a, .col2 a, .article a{
+    text-decoration: none;
+    color: black;
+}
 /* -----------------------------------------SIDEBAR-------------------------------------- */
 .sidebar {
     background-color: #f8f9fa;
@@ -375,12 +381,71 @@ hr.solid {
 /*---------------------------------------FOOTER------------------------------------------*/
 
 footer {
-    background-color: #f8f9fa;
+    margin: 20px;
     padding: 20px 0;
 }
 
-.rowfooter{
-    display: inline-flex;
-    width: 100%;
+.rowFooter{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
 
+}
+
+.FooterText {
+    text-decoration: none;
+    margin: 2px;
+    text-align: start;
+}
+
+.FooterText ul {
+    padding-left: 0;
+    margin-left: 0;
+    list-style: none;
+    text-align: left;
+}
+
+.FooterText a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+h5 {
+    font-weight: bold;
+}
+
+
+/* -----------------------------------gestione pagina notizie------------------------------------- */
+.rowMain{
+    margin-top: 10px;
+    position: relative;
+}
+
+.MainNews {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.MainNewsImg img{
+    width: 450px;
+    height: 800px;
+}
+
+.IconSection{
+    display: inline-list-item;
+    justify-content: space-around;
+    margin-top: 1em;
+}
+
+.imgDetails{
+    font-size: 2em;
+}
+
+@media only screen and (max-width: 900px){
+    .MainNews img{
+        max-width: 100%;
+    }
 }
