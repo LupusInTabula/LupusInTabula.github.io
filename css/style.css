@@ -195,7 +195,6 @@ main{
 
 /* --------------------------------- SING UP ------------------------------------------ */
 
-/* Full-width input fields */
 input[type=text], input[type=password] {
     width: 100%;
     padding: 15px;
@@ -205,13 +204,11 @@ input[type=text], input[type=password] {
     background: #f1f1f1;
 }
 
-/* Add a background color when the inputs get focus */
 input[type=text]:focus, input[type=password]:focus {
     background-color: #ddd;
     outline: none;
 }
 
-/* Set a style for all buttons */
 button {
     background-color: #333;
     color: white;
@@ -227,53 +224,46 @@ button:hover {
     opacity:1;
 }
 
-/* Extra styles for the cancel button */
 .cancelbtn {
     padding: 14px 20px;
     background-color: #f44336;
 }
 
-/* Float cancel and signup buttons and add an equal width */
 .cancelbtn, .signupbtn {
     float: left;
     width: 50%;
 }
 
-/* Add padding to container elements */
 .containerSINGUP {
     padding: 16px;
 }
 
-/* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
     background-color: #474e5d;
     padding-top: 50px;
 }
 
-/* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    margin: 5% auto 15% auto;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%;
     color: black;
 }
 
-/* Style the horizontal ruler */
 hr {
     border: 1px solid #f1f1f1;
     margin-bottom: 25px;
 }
 
-/* The Close Button (x) */
 .close {
     position: absolute;
     right: 35px;
@@ -296,7 +286,6 @@ hr {
     display: table;
 }
 
-/* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
     .cancelbtn, .signupbtn {
         width: 100%;
@@ -313,9 +302,8 @@ hr {
 }
 
 @media only screen and (max-width: 600px) {
-    /* Stili per dispositivi con larghezza massima di 600px (es. dispositivi mobili) */
     .topnav {
-        flex-direction: row; /* Cambia il layout in colonna per i dispositivi mobili */
+        flex-direction: row;
     }
 
     .containerWeather{
@@ -373,7 +361,6 @@ nav.container{
     margin-bottom: 5px;
 }
 
-/* Solid border */
 hr.solid {
     border-top: 3px solid #bbb;
 }
@@ -418,10 +405,19 @@ h5 {
 /* -----------------------------------gestione pagina notizie------------------------------------- */
 .grid-container{
     display: grid;
-    grid-template-areas:
-                "voidcontainer MainNews voidcontainer";
-    grid-template-columns: auto auto auto auto auto;
-    gap: 20px;
+    grid-template-rows: 3fr;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 3px;
+    background-color: white;
+}
+@media (max-width: 772px) {
+    .grid-container{
+        grid-template-rows: 3fr;
+        grid-template-columns: 2fr;
+    }
+    .voidcontainer{
+        display: none;
+    }
 }
 
 .voidcontainer{
@@ -445,8 +441,9 @@ h6{
 }
 
 .MainImmage{
-    width: 450px;
-    height: 800px;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
 }
 
 .IconSection{
@@ -479,8 +476,62 @@ h6{
 /* ------------------ gestione link menu ----------------------------------------- */
 .gridMenu{
     display: grid;
-    grid-template-areas:
-                "... topMenu ..."
-                "leftMenu sideMenu";
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 3px;
+    background-color: #ddd;
+}
+
+.topMenu{
+    background-color: white;
+    padding: 10px;
+    grid-column: span 2;
+}
+
+.topMenu img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.leftMenu, .sideMenu{
+    background-color: white;
+    padding: 10px;
+}
+
+@media (max-width: 1000px){
+    .gridMenu{
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 1fr;
+    }
+    .leftMenu, .sideMenu{
+        grid-column: span 2;
+    }
+
+}
+.LinkMenuArticle{
+    display: grid;
+    grid-template-rows: auto 2fr;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 2px;
+}
+
+.LinkMenuArticle h1{
+    grid-column: span 2;
+}
+.LinkMenuArticle img{
+    float: right;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+.MenuSideArticle h1{
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.MenuSideArticle h2{
+    text-decoration: none;
+    font-size: 1em;
 }
